@@ -9,6 +9,7 @@
 Click "Use this template" on [GitHub](https://github.com/foundry-rs/forge-template) to create a new repository with this repo as the initial state.
 
 Or, if your repo already exists, run:
+
 ```sh
 forge init
 forge build
@@ -36,5 +37,10 @@ contract ContractTest is Test {
 
 ## Development
 
+ENS address 0xBB352fBA92B9De62DC75672F472465Ff3Ffb0Aba
+
+chat 0x0bA0cc36d16F3512411F928b50a9de432D91FFf0
+
 This project uses [Foundry](https://getfoundry.sh). See the [book](https://book.getfoundry.sh/getting-started/installation.html) for instructions on how to install and use Foundry.
+
 # ENS-SocialMedia

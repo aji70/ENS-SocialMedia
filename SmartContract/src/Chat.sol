@@ -56,6 +56,10 @@ contract Chat {
         ENS = _ens;
     }
 
+    function registerENS(string memory _name) public {
+        IENS(ENS).register(_name);
+    }
+
     function register(
         string memory _name,
         string memory handle,
@@ -83,7 +87,21 @@ contract Chat {
         return userProfileByID[id];
     }
 
-    function sendMessage(address _to, string memory _message) public {
+    function getUserByName(
+        string memory _name
+    ) public view returns (User memory Name) {
+        return userProfile[_name];
+    }
+
+    function getUserByAddress(
+        address addr
+    ) public view returns (User memory Name) {
+        return userAddrProfile[addr];
+    }
+
+    function sendMessage(string memory _name, string memory _message) public {
+        address _to;
+        _to = IENS(ENS).getAddress(_name);
         require(!registered[msg.sender], "Register to send message");
         require(
             !registered[_to],
